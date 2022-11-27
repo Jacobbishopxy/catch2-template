@@ -1,7 +1,7 @@
 
 
-add_executable(factorial Factorial.cpp)
-target_link_libraries(factorial PRIVATE Catch2::Catch2WithMain)
+add_executable(test test_factorial.cpp)
+target_link_libraries(test fct Catch2::Catch2WithMain)
 
 # These tests need their own main
 # add_executable(custom-main-tests test.cpp test-main.cpp)
