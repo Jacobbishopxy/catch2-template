@@ -2,15 +2,15 @@
 
 #include "factorial.h"
 
-TEST_CASE("test case #1", "[one]")
+TEST_CASE("factorial test #1", "[one]")
 {
-    REQUIRE(Factorial(0) == 1);
+    REQUIRE(factorial(0) == 1);
 }
 
-TEST_CASE("test case #2", "[two]")
+TEST_CASE("factorial test #2", "[two]")
 {
-    REQUIRE(Factorial(1) == 1);
-    REQUIRE(Factorial(2) == 2);
-    REQUIRE(Factorial(3) == 6);
-    REQUIRE(Factorial(10) == 3628800);
+    REQUIRE(factorial(1) == 1);
+    REQUIRE(factorial(2) == 2);
+    REQUIRE(factorial(3) == 6);
+    REQUIRE(factorial(10) == 3628800);
 }

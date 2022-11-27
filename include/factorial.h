@@ -1,2 +1,2 @@
 
-int Factorial(int number);
+int factorial(int number);

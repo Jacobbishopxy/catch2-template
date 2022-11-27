@@ -16,7 +16,7 @@
    make
    ```
 
-1. test:
+1. test one executable:
 
    ```sh
    tests/test
@@ -25,10 +25,10 @@
 1. test specific test case:
 
    ```sh
-   tests/test "test case #2"
+   tests/test "factorial test #2"
    ```
 
-1. test specific tag (`\` in front of tags' `[` is required while using `zsh`):
+   or test specific tag:
 
    ```sh
    tests/test --list-tags
@@ -40,14 +40,25 @@
 - `./src/CMakeLists.txt` includes files as lib:
 
   ```txt
-  add_library(fct factorial.cpp)
+  add_library(fct factorial.cpp)  # lib name: fct
+  add_library(bnm binomial.cpp)   # lib name: bnm
   ```
 
-- `./tests/CMakeLists.txt` adds executable and links libs:
+- `./tests/CMakeLists.txt` adds executable and links libs (works for multiple executables with their libraries):
 
   ```txt
-  add_executable(test test_factorial.cpp)
-  target_link_libraries(test fct Catch2::Catch2WithMain)
+  add_executable(
+    test # name of the executable
+    test_factorial.cpp
+    test_binomial.cpp
+  )
+
+  target_link_libraries(
+    test # linking libraries from `src/CMakeLists.txt`
+    fct
+    bnm
+    Catch2::Catch2WithMain
+  )
   ```
 
 - `./CMakeLists.txt` main file:
